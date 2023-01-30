@@ -3,6 +3,7 @@ package com.example.firstproject.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
@@ -10,7 +11,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Entity
+@Entity // 해당 클래스로 테이블을 만든다 DB가 객체를 인식하게함
 @AllArgsConstructor
 @ToString
 @NoArgsConstructor
@@ -18,7 +19,7 @@ import lombok.ToString;
 public class Article {
 
 	@Id //id값을 부여하기위한 어노테이션
-	@GeneratedValue // 1,2,3 자동으로 부여해줌
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 id를 자동 생성
 	private Long id;
 
 	@Column
@@ -26,6 +27,5 @@ public class Article {
 
 	@Column
 	private String content;
-
 
 }
