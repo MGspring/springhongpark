@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -13,6 +14,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @NoArgsConstructor
+@Getter
 public class Article {
 
 	@Id //id값을 부여하기위한 어노테이션
@@ -24,5 +26,6 @@ public class Article {
 
 	@Column
 	private String content;
+
 
 }
