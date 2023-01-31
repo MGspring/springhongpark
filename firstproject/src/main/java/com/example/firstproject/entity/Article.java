@@ -7,15 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Entity // 해당 클래스로 테이블을 만든다 DB가 객체를 인식하게함
 @AllArgsConstructor
-@ToString
 @NoArgsConstructor
-@Getter
+@Data
 public class Article {
 
 	@Id //id값을 부여하기위한 어노테이션
@@ -34,4 +32,5 @@ public class Article {
 		if(article.content != null)
 			this.content = article.content;
 	}
+
 }
