@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -32,16 +31,13 @@ public class ArticleController {
 	@PostMapping("/articles/create")
 	public String createArticle(ArticleForm form) {
 		log.info(form.toString());
-		// System.out.println(form.toString());
 
 		//dto를 entity로 변환
 		Article article = form.toEntity();
 		log.info(article.toString());
-		// System.out.println(article.toString());
 
 		Article saved = articleRepository.save(article);
 		log.info(saved.toString());
-		// System.out.println(saved.toString());
 
 		return "redirect:/articles/" + saved.getId();
 	}
@@ -55,6 +51,7 @@ public class ArticleController {
 
 		// 2: 가져온 데이터를 모델에 등록
 		model.addAttribute("article", articleEntity);
+		// 키와 밸류
 
 		// 3: 보여줄 페이지를 설정
 		return "articles/show";
