@@ -12,6 +12,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="com.example.firstproject" target="11" />
+      <module name="com.example.firstproject.main" target="11" />
+      <module name="com.example.firstproject.test" target="11" />
       <module name="firstproject.firstproject.main" target="11" />
       <module name="firstproject.firstproject.test" target="11" />
     </bytecodeTargetLevel>
